@@ -1,0 +1,19 @@
+//q1 wap to create a file and stores the name of the student which is entered by user from keyboard .
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+    
+    ofstream fout;
+    fout.open("student.txt");
+    string name;
+    cout<<"Enter the name of the student"<<endl;
+    cin>>name;
+    fout<<name;
+    fout.close();
+    return 0;
+}
