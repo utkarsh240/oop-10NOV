@@ -1,0 +1,28 @@
+//wap to find the number of characters present (lenght) of file, number of words,and number of sentences present in the file.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string line;
+    int charCount = 0, wordCount = 0, sentenceCount = 0;
+    ifstream file("file.txt");
+    while (getline(file, line))
+    {
+        charCount += line.length();
+        for (int i = 0; i < line.length(); i++)
+        {
+            if (line[i] == ' ')
+                wordCount++;
+            if (line[i] == '.' || line[i] == '!' || line[i] == '?')
+                sentenceCount++;
+        }
+    }
+    cout << "Number of characters: " << charCount << endl;
+    cout << "Number of words: " << wordCount + 1 << endl;
+    cout << "Number of sentences: " << sentenceCount << endl;
+    return 0;
+}
