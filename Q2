@@ -1,0 +1,23 @@
+//q2 wap to read the contents of file print to monitor the display unit and also write to another file.
+
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    char ch;
+    ifstream fin;
+    ofstream fout;
+    fin.open("file1.txt");
+    fout.open("file2.txt");
+    while(!fin.eof())
+    {
+        fin.get(ch);
+        cout<<ch;
+        fout<<ch;
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}
